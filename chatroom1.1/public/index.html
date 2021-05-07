@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>聊天室</title>
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_2527475_koo1le973ed.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2527475_meydg20x42h.css">
   <link rel="stylesheet" href="css/jquery.emoji.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
 </head>
@@ -76,7 +76,10 @@
     <!--预览容器，存放点击放大后的图片-->
     <div class="enlargeContainer" id="enlargeContainer">
       <!-- 关闭按钮，一个叉号图片 -->
-      <img src="images/close.png" class="close" id="close">
+      <!--      <img src="images/close.png" class="close" id="close">-->
+      <span class="iconfont icon-enlarge enlarge" id="enlargeBtn"></span>
+      <span class="iconfont icon-smaller smaller" id="smallerBtn"></span>
+      <span class="iconfont icon-close close" id="closeBtn"></span>
     </div>
   </div>
 
@@ -84,43 +87,44 @@
   <div class="chat-room">
     <p class="title">聊天室(<span id="userCount">99</span>)</p>
     <div class="chat-container">
-      <!--      <p class="tip">“往事随风”邀请你和"Boy"加入了群聊</p>
-            <div class="sendImgMsg">
-              <img src="./images/huitailang.jpg" class="sendImg">
-              <img src="./images/2.jpg" class="avatarImg">
-            </div>
-            <div class="receiveMsg">
-              <img src="./images/1.jpg" class="avatarImg">
-              <div class="rightStyle">
-                <span class="nickname">小美</span>
-                <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
-              </div>
-            </div>
-            <p class="tip">小王离开了聊天室</p>
-            <div class="sendMsg">
-              <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
-              <img src="./images/2.jpg" class="avatarImg">
-            </div>
-            <div class="receiveMsg">
-              <img src="./images/1.jpg" class="avatarImg">
-              <div class="rightStyle">
-                <span class="nickname">小美</span>
-                <img src="./images/huitailang.jpg" class="receiveImgMsg">
-              </div>
-            </div>
-            <div class="sendMsg">
-              <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
-              <img src="./images/2.jpg" class="avatarImg">
-            </div>
-            <div class="receiveMsg">
-              <img src="./images/1.jpg" class="avatarImg">
-              <div class="rightStyle">
-                <span class="nickname">小美</span>
-                <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
-              </div>
-            </div>-->
+      <!--<p class="tip">“往事随风”邀请你和"Boy"加入了群聊</p>
+      <div class="sendImgMsg">
+        <img src="./images/huitailang.jpg" class="sendImg">
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
+        </div>
+      </div>
+      <p class="tip">小王离开了聊天室</p>
+      <div class="sendMsg">
+        <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <img src="./images/huitailang.jpg" class="receiveImgMsg">
+        </div>
+      </div>
+      <div class="sendMsg">
+        <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
+        </div>
+      </div>-->
 
     </div>
+
     <div class="menus">
       <div class="btns">
         <span class="iconfont icon-xiaolian" title="表情" id="emojiBtn"></span>

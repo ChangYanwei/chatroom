@@ -1,13 +1,15 @@
 # chatroom
 多人聊天室
 
+> 由于版本之间的改动很大，我想把代码都保留下来，所以不同版本的聊天室我放在了不同的文件夹中。
+
 ## 版本1.0 websocket-chatroom
-- 执行，`node app.js`，在浏览器中运行index.html文件
+- 进入websocket-chatroom文件夹，执行`node app.js`，直接在浏览器查看index.html
 - 使用 [nodejs-WebSocket](https://github.com/sitegui/nodejs-websocket) 第三方库来开发websocket的服务器
 - 相关博客：[使用Websocket制作简易聊天室](https://www.yuque.com/changyanwei-wlmrd/cnxiwc/iswywm)
 
 ## 版本1.1 socket.io + express
-- 执行`node app.js`，访问`http://127.0.0.1:5000`
+- 进入chatroom1.1文件夹，执行`node app.js`，访问`http://127.0.0.1:5000`
 - 使用[socket.io](https://socket.io/)监听连接的建立、断开事件，监听用户的登录、发送消息事件
 - 使用[express](https://www.expressjs.com.cn/)开放静态资源目录
 - 使用[html2canvas](http://html2canvas.hertzen.com/)实现截图

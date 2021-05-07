@@ -4,9 +4,9 @@
   /*box-sizing: border-box;*/
 }
 
+html,
 body {
   background-color: rgb(154,162,173);
-  /*position: relative;*/
 }
 
 /*登录界面*/
@@ -189,6 +189,7 @@ body {
 
 .enlargeContainer {
   display: none;
+  color: white;
 }
 
 .enlargePreviewImg {
@@ -198,19 +199,31 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  /*宽度设置为页面宽度的70%，高度自适应*/
+  /*宽度设置为页面宽度的50%，高度自适应*/
   width: 50%;
   z-index: 200;
 }
 
-.close {
+.enlargeContainer .iconfont {
   position: absolute;
+  font-size: 25px !important;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.enlarge {
+  top: 20px;
+  right: 100px;
+}
+
+.smaller {
+  top: 20px;
+  right: 60px;
+}
+
+.close {
   top: 20px;
   right: 20px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 200;
 }
 
 /*聊天室*/
@@ -239,6 +252,7 @@ body {
   padding: 10px 20px 0;
   overflow: auto;
   height: 400px;
+  max-width: 620px;
 }
 
 .tip {
@@ -281,6 +295,7 @@ body {
   max-width: 200px;
   text-align: left;
   font-size: 15px;
+  word-break:break-all;
 }
 
 .sendContent:after {
@@ -300,7 +315,9 @@ body {
 .sendImg,
 .receiveImgMsg{
   width: 150px;
-  height: 120px;
+  /*height: 120px;*/
+  /*transform: scale(0.3);*/
+  cursor: pointer;
 }
 
 /*接收消息*/

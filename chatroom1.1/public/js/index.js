@@ -121,7 +121,11 @@ socket.on('receiveImg', function (data) {
   }
   chatContainer.innerHTML += html;
   // 发送消息的时候，让聊天页面滚动到底部可视区域
-  scrollIntoView(chatContainer);
+  let img = new Image();
+  img.src = data.imgUrl;
+  img.onload = function () {
+    scrollIntoView(chatContainer);
+  };
 });
 
 let imgList = document.getElementById('imgList');
@@ -145,7 +149,7 @@ function selectImg() {
 // 用户上传头像
 function uploadAvatar() {
   let uploadImgBtn = document.getElementById('uploadImgBtn');
-  uploadImgBtn.addEventListener('click',function () {
+  uploadImgBtn.addEventListener('click', function () {
     let previewContainer = document.getElementById('previewContainer');
     previewContainer.classList.toggle('previewContainerExtend');
 
@@ -235,14 +239,12 @@ function sendMessage() {
 // 聊天页滚动到页面底部可视区域
 function scrollIntoView(element) {
   element.lastElementChild.scrollIntoView(false);
-  console.log(element.scrollTop);
 }
 
 // 聊天时发送图片
 function sendImg() {
   let fileInput = document.getElementById('fileInput');
   fileInput.addEventListener('change', function (event) {
-    console.log(event.target.files);
     let file = event.target.files[0];
     // 要把这个文件发送给服务器
     let reader = new FileReader();
@@ -317,20 +319,20 @@ function cutImg() {
 function enlargeImg() {
   let black_overlay = document.getElementById('black_overlay');
   let enlargeContainer = document.getElementById('enlargeContainer');
-  let closeBtn = document.getElementById('close');
+  let closeBtn = document.getElementById('closeBtn');
+  let enlargeBtn = document.getElementById('enlargeBtn');
+  let smallerBtn = document.getElementById('smallerBtn');
+  let img;
 
-  chatContainer.addEventListener('click',function (event) {
+  chatContainer.addEventListener('click', function (event) {
     let target = event.target;
-    black_overlay = document.getElementById('black_overlay');
-    enlargeContainer = document.getElementById('enlargeContainer');
-    closeBtn = document.getElementById('close');
     let classList = target.classList;
-    if (classList.contains('sendImg' || classList.contains('receiveImgMsg'))) {
+    if (classList.contains('sendImg') || classList.contains('receiveImgMsg')) {
       let imgUrl = target.src;
       // 显示黑色遮罩和预览容器
       black_overlay.style.display = 'block';
       enlargeContainer.style.display = 'block';
-      let img = new Image();
+      img = new Image();
       img.src = imgUrl;
       img.classList.add('enlargePreviewImg');
       if (closeBtn.nextElementSibling) {
@@ -344,6 +346,23 @@ function enlargeImg() {
   closeBtn.addEventListener('click', function () {
     black_overlay.style.display = 'none';
     enlargeContainer.style.display = 'none';
+  });
+
+  // 继续放大
+  enlargeBtn.addEventListener('click', function () {
+    let documentElement = document.documentElement;
+    if (img.height < documentElement.clientHeight * 0.8) {
+      img.style.width = img.width + Math.floor(documentElement.clientWidth / 10) + 'px';
+    }
+  });
+
+  // 继续缩小
+  smallerBtn.addEventListener('click', function () {
+    let documentElement = document.documentElement;
+    img.style.width = img.width - Math.floor(documentElement.clientWidth / 10) + 'px';
+    if (img.width < 300) {
+      img.style.width = '300px';
+    }
   });
 }
 
