@@ -11,8 +11,8 @@ body {
 
 /*登录界面*/
 .loginContainer {
-  width: 300px;
-  height: 320px;
+  width: 400px;
+  /*height: 420px;*/
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -26,6 +26,8 @@ body {
   height: 50px;
   line-height: 50px;
   text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .nicknameInput {
@@ -40,7 +42,9 @@ body {
 .imgList {
   margin-top: 5px;
   border: 1px solid gray;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 5px;
 }
 
@@ -49,8 +53,8 @@ body {
 }
 
 .imgList img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin: 5px;
   cursor: pointer;
   box-sizing: border-box;
@@ -60,14 +64,78 @@ body {
   border: 3px solid red;
 }
 
+.uploadImg {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.uploadImgBtn {
+  background-color: #46b8da;
+  padding: 5px 15px;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.previewContainer {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.previewContainerExtend {
+  margin-top: 15px;
+  border: 2px dotted gainsboro;
+  height: 80px;
+}
+
+.uploadIcon {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+.isVisible {
+  display: none;
+}
+
+.uploadFileInput {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 80px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  opacity: 0;
+}
+
+#preview {
+  display: inline-block;
+}
+
+.previewAvatar {
+  width: 80px;
+  height: 80px;
+}
+
 .loginBtn {
   width: 100%;
   background-color: green;
   color: white;
   border: none;
-  height: 30px;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
 /*聊天框*/

@@ -70,7 +70,7 @@ socket.on('userLeave', function (user) {
 
 // 监听用户发送文本内容
 socket.on('receiveMessage', function (data) {
-  console.log('消息：',data);
+  console.log('消息：', data);
   // 把接收到的消息显示到聊天窗口中，需要区分这个消息是自己的还是其他人发的
   let sendUser = data.sendUser;
   let html = '';
@@ -142,6 +142,36 @@ function selectImg() {
   })
 }
 
+// 用户上传头像
+function uploadAvatar() {
+  let uploadImgBtn = document.getElementById('uploadImgBtn');
+  uploadImgBtn.addEventListener('click',function () {
+    let previewContainer = document.getElementById('previewContainer');
+    previewContainer.classList.toggle('previewContainerExtend');
+
+    let preview = document.getElementById('preview');
+    let uploadFileInput = document.getElementById('uploadFileInput');
+    uploadFileInput.classList.toggle('uploadFileInput');
+    uploadFileInput.addEventListener('change', function (event) {
+      let file = event.target.files[0];
+      let imgUrl = URL.createObjectURL(file);
+
+      let img = document.createElement('img');
+      img.src = imgUrl;
+      img.classList.add('previewAvatar');
+
+      // 去除当前已经选中的图片的外边框和class类名
+      let nowSelectImg = document.querySelector('.now');
+      nowSelectImg.classList.remove('now');
+
+      preview.innerHTML = '';
+      preview.appendChild(img);
+      console.log(imgUrl);
+    })
+  });
+
+}
+
 // 3.登录
 function login() {
   let loginBtn = document.getElementById('loginBtn');
@@ -152,7 +182,13 @@ function login() {
       alert('用户名不能为空');
       return;
     }
-    let imgUrl = imgList.getElementsByClassName('now')[0].src;
+    let uploadAvatar = document.querySelector('.previewAvatar');
+    let imgUrl = '';
+    if (uploadAvatar) {
+      imgUrl = uploadAvatar.src;
+    } else {
+      imgUrl = imgList.getElementsByClassName('now')[0].src;
+    }
     console.log(nickname, imgUrl);
 
     // 告诉socket.io需要登录
@@ -264,7 +300,7 @@ function emoji() {
 // 截图
 function cutImg() {
   let cutImg = document.getElementById('cutImg');
-  cutImg.addEventListener('click',function () {
+  cutImg.addEventListener('click', function () {
     html2canvas(document.querySelector('.chatContainer')).then(canvas => {
       // 将canvas转成图片url
       let imgUrl = canvas.toDataURL("image/png");
@@ -279,6 +315,7 @@ function cutImg() {
 }
 
 selectImg();
+uploadAvatar();
 login();
 sendMessage();
 sendImg();
