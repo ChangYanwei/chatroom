@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <style>
+    div {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      margin-top: 20px;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    #result {
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+<input type="text" placeholder="请输入消息">
+<button id="send">发送数据</button>
+<button id="close">关闭连接</button>
+<!--显示结果-->
+<div id="result">
+  <p id="title"></p>
+</div>
+
+<script>
+
+  let input = document.querySelector('input');
+  let closeBtn = document.getElementById('close');
+  let sendBtn = document.getElementById('send');
+  let div = document.getElementById('result');
+  let title = document.getElementById('title');
+
+  const TYPE_ENTER = 0;
+  const TYPE_EXIT = 1;
+  const TYPE_NORMAL = 2;
+
+  // 1.创建websocket对象
+  // 参数1 url：websocket的服务地址
+  // 参数2 protocol：可选，指定连接的协议
+  // let socket = new WebSocket('ws://echo.websocket.org');
+  let socket = new WebSocket('ws://127.0.0.1:7000');
+
+  //  websocket事件
+  // 2. 连接建立成功的事件，当open事件被触发时，就意味着当前连接已经准备好发送和接受数据
+  socket.addEventListener('open',function () {
+    console.log('open...');
+    let p = document.createElement('p');
+    p.innerText = '连接建立成功...';
+    div.appendChild(p);
+  });
+
+  // 3. 主动给websocket服务发送消息
+  sendBtn.addEventListener('click',function () {
+    console.log('发送消息给服务器...');
+    let value = input.value;
+    input.value = "";
+    socket.send(value);
+  });
+
+  // 4. 接收服务器返回的内容
+  socket.addEventListener('message',function (event) {
+    console.log(event);
+    console.log('接收消息...');
+    let messageObj = JSON.parse(event.data);
+    let messageContent = messageObj.message + ' ' + messageObj.time;
+    title.textContent = "当前在线总人数：" + messageObj.count;
+    let p = document.createElement('p');
+    if (messageObj.type === TYPE_ENTER) {
+      p.classList.add('green');
+    } else if(messageObj.type === TYPE_EXIT) {
+      p.classList.add('red');
+    } else {
+      p.classList.add('blue');
+      messageContent = messageObj.message;
+    }
+    p.textContent = messageContent;
+    div.appendChild(p);
+  });
+
+  // 监听关闭
+  socket.addEventListener('close',function () {
+    console.log('close...');
+    let p = document.createElement('p');
+    p.textContent = '连接已关闭...';
+    div.appendChild(p);
+  });
+
+  closeBtn.addEventListener('click',function () {
+    socket.close();
+  });
+</script>
+
+</body>
+</html>
