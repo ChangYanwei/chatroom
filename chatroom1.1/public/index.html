@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>聊天室</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2527475_koo1le973ed.css">
+  <link rel="stylesheet" href="css/jquery.emoji.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+</head>
+<body>
+<!--登录界面-->
+<div class="loginContainer" style="display: block">
+  <p class="loginTitle">用户登录</p>
+  <div>
+    <p>用户名</p>
+    <input type="text" placeholder="请输入用户名" name="nickname" id="nickname" class="nicknameInput">
+    <p class="selectImg">选择头像</p>
+    <div class="imgList" id="imgList">
+      <img class="now" src="./images/1.jpg">
+      <img src="./images/2.jpg">
+      <img src="./images/3.jpg">
+      <img src="./images/4.jpg">
+      <img src="./images/5.jpg">
+      <img src="./images/6.jpg">
+      <img src="./images/7.jpg">
+      <img src="./images/8.jpg">
+      <img src="./images/9.jpg">
+      <img src="./images/10.jpg">
+    </div>
+    <button class="loginBtn" id="loginBtn">登录</button>
+  </div>
+</div>
+
+<!--聊天界面-->
+<div class="chatContainer" style="display: none">
+  <!-- 左侧用户列表 -->
+  <div class="user-list">
+    <div class="current-user">
+      <p class="header-title">当前用户</p>
+      <div class="user-info">
+        <img src="images/1.jpg" class="avatarImg" id="userAvatarImg">
+        <span id="currentNickname">小明</span>
+      </div>
+    </div>
+    <p class="header-title">朋友列表</p>
+    <div class="friends-list">
+      <!--      <div class="user-info">
+              <img src="./images/2.jpg" class="avatarImg">
+              <span>小红</span>
+            </div>
+            <div class="user-info">
+              <img src="./images/3.jpg" class="avatarImg">
+              <span>小黑</span>
+            </div>
+            <div class="user-info">
+              <img src="./images/4.jpg" class="avatarImg">
+              <span>老王</span>
+            </div>-->
+    </div>
+  </div>
+
+  <!-- 右侧聊天界面 -->
+  <div class="chat-room">
+    <p class="title">聊天室(<span id="userCount">99</span>)</p>
+    <div class="chat-container">
+<!--      <p class="tip">“往事随风”邀请你和"Boy"加入了群聊</p>
+      <div class="sendImgMsg">
+        <img src="./images/huitailang.jpg" class="sendImg">
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
+        </div>
+      </div>
+      <p class="tip">小王离开了聊天室</p>
+      <div class="sendMsg">
+        <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <img src="./images/huitailang.jpg" class="receiveImgMsg">
+        </div>
+      </div>
+      <div class="sendMsg">
+        <span class="sendContent">d等等在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛在干嘛饿呢</span>
+        <img src="./images/2.jpg" class="avatarImg">
+      </div>
+      <div class="receiveMsg">
+        <img src="./images/1.jpg" class="avatarImg">
+        <div class="rightStyle">
+          <span class="nickname">小美</span>
+          <p class="receiveContent">aa吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭dd等等</p>
+        </div>
+      </div>-->
+
+    </div>
+    <div class="menus">
+      <div class="btns">
+        <span class="iconfont icon-xiaolian" title="表情" id="emojiBtn"></span>
+        <span class="iconfont icon-icon_cut_line cut" title="截图" id="cutImg"></span>
+        <div class="chooseFile">
+          <span class="iconfont icon-file" title="选择图片"></span>
+          <input type="file" id="fileInput" class="fileInput">
+        </div>
+
+      </div>
+      <div class="inputContainer">
+<!--        <textarea rows="5" cols="85" maxlength="300" autofocus></textarea>-->
+        <div id="textareaMsg" class="contentEdit" contenteditable></div>
+        <div class="sendContainer">
+          <span class="sendTip">按下Ctrl+Enter发送，Enter换行</span>
+          <button class="sendBtn" id="sendBtn">发送</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--引入socket.io-->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/jquery.mousewheel-3.0.6.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/jquery.emoji.js"></script>
+<script src="js/html2canvas.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

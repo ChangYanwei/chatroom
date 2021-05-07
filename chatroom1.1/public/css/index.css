@@ -1,0 +1,311 @@
+* {
+  padding: 0;
+  margin: 0;
+  /*box-sizing: border-box;*/
+}
+
+body {
+  background-color: rgb(154,162,173);
+  /*position: relative;*/
+}
+
+/*登录界面*/
+.loginContainer {
+  width: 300px;
+  height: 320px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  transition: display 1s;
+}
+
+.loginTitle {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.nicknameInput {
+  width: 100%;
+  height: 30px;
+  border: 1px solid gray;
+  margin-top: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.imgList {
+  margin-top: 5px;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 5px;
+}
+
+.selectImg {
+  margin-top: 20px;
+}
+
+.imgList img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.now {
+  border: 3px solid red;
+}
+
+.loginBtn {
+  width: 100%;
+  background-color: green;
+  color: white;
+  border: none;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/*聊天框*/
+.chatContainer {
+  margin: 20px auto 0;
+  width: 1000px;
+  display: flex;
+}
+
+/*左侧用户列表*/
+.user-list {
+  width: 300px;
+  height: 645px;
+  background-color: rgb(46, 52, 58);
+  color: white;
+  padding: 0 20px;
+  overflow: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.header-title {
+  height: 50px;
+  line-height: 50px;
+  /*margin-left: ;*/
+}
+
+.avatarImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/*聊天室*/
+.chat-room {
+  position: relative;
+  width: 700px;
+  height: 645px;
+  background-color: rgb(236, 236, 236);
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  width: 94%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  /*padding: 0 20px;*/
+  border-bottom: 1px solid #ccc;
+
+}
+
+.chat-container {
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  overflow: auto;
+  height: 400px;
+}
+
+.tip {
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  margin: 15px 0;
+}
+
+/*发送消息*/
+/*文本消息*/
+.sendMsg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-top: 15px;
+}
+
+/*图片消息*/
+.sendImgMsg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.sendMsg .avatarImg,
+.sendImgMsg .avatarImg{
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.sendContent {
+  position: relative;
+  top: -10px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  background-color: rgb(179, 224, 129);
+  display: inline-block;
+  max-width: 200px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.sendContent:after {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent transparent transparent rgb(179,224,129);
+}
+
+/*图片中图片的大小*/
+.sendImg,
+.receiveImgMsg{
+  width: 150px;
+  height: 120px;
+}
+
+/*接收消息*/
+.receiveMsg {
+  display: flex;
+  margin-top: 15px;
+}
+
+.nickname {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.receiveContent {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  font-size: 15px;
+  max-width: 200px;
+}
+
+.receiveContent:after {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+.rightStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*表情*/
+.emoji_icon {
+  width: 25px;
+  height: 25px;
+}
+
+/*底部发送消息*/
+.menus {
+  border-top: 1px solid #ccc;
+  padding: 0 20px 10px;
+  margin-top: 15px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.btns .iconfont {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btns .cut {
+  font-size: 24px;
+}
+
+.chooseFile {
+  position: relative;
+}
+.fileInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
+.inputContainer .contentEdit {
+  background-color: rgb(236,236,236);
+  /*禁止调节大小*/
+  /*resize: none;*/
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  font-size: 15px;
+  height: 70px;
+  overflow: auto;
+}
+
+.sendContainer {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.sendTip {
+  color: gray;
+  font-size: 12px;
+}
+
+.sendBtn {
+  padding: 2px 15px;
+  background-color: green;
+  border-radius: 2px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+
