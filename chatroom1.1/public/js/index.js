@@ -124,6 +124,7 @@ socket.on('receiveImg', function (data) {
   let img = new Image();
   img.src = data.imgUrl;
   img.onload = function () {
+    // 图片加载完成再滚动
     scrollIntoView(chatContainer);
   };
 });
@@ -327,6 +328,7 @@ function enlargeImg() {
   chatContainer.addEventListener('click', function (event) {
     let target = event.target;
     let classList = target.classList;
+    // 点击左侧或右侧图片消息
     if (classList.contains('sendImg') || classList.contains('receiveImgMsg')) {
       let imgUrl = target.src;
       // 显示黑色遮罩和预览容器
