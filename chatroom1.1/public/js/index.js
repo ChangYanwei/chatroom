@@ -248,7 +248,6 @@ function sendImg() {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function () {
-      console.log(reader.result);
       socket.emit('sendImg', {
         sendUser: currentUser,
         imgUrl: reader.result
@@ -314,6 +313,40 @@ function cutImg() {
   })
 }
 
+// 点击图片消息预览放大
+function enlargeImg() {
+  let black_overlay = document.getElementById('black_overlay');
+  let enlargeContainer = document.getElementById('enlargeContainer');
+  let closeBtn = document.getElementById('close');
+
+  chatContainer.addEventListener('click',function (event) {
+    let target = event.target;
+    black_overlay = document.getElementById('black_overlay');
+    enlargeContainer = document.getElementById('enlargeContainer');
+    closeBtn = document.getElementById('close');
+    let classList = target.classList;
+    if (classList.contains('sendImg' || classList.contains('receiveImgMsg'))) {
+      let imgUrl = target.src;
+      // 显示黑色遮罩和预览容器
+      black_overlay.style.display = 'block';
+      enlargeContainer.style.display = 'block';
+      let img = new Image();
+      img.src = imgUrl;
+      img.classList.add('enlargePreviewImg');
+      if (closeBtn.nextElementSibling) {
+        enlargeContainer.removeChild(closeBtn.nextElementSibling);
+      }
+      enlargeContainer.appendChild(img);
+    }
+  });
+
+  // 关闭预览
+  closeBtn.addEventListener('click', function () {
+    black_overlay.style.display = 'none';
+    enlargeContainer.style.display = 'none';
+  });
+}
+
 selectImg();
 uploadAvatar();
 login();
@@ -321,6 +354,7 @@ sendMessage();
 sendImg();
 emoji();
 cutImg();
+enlargeImg();
 
 
 

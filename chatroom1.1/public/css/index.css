@@ -175,6 +175,44 @@ body {
   margin-right: 10px;
 }
 
+/*预览图片*/
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.enlargeContainer {
+  display: none;
+}
+
+.enlargePreviewImg {
+  /*预览后放大的图片是相对于整个页面定位*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /*宽度设置为页面宽度的70%，高度自适应*/
+  width: 50%;
+  z-index: 200;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 200;
+}
+
 /*聊天室*/
 .chat-room {
   position: relative;
@@ -342,6 +380,7 @@ body {
   width: 20px;
   height: 20px;
   opacity: 0;
+  cursor: pointer;
 }
 
 .inputContainer .contentEdit {
