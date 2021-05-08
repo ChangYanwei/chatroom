@@ -1,0 +1,71 @@
+/*底部发送消息*/
+.menus {
+  border-top: 1px solid #ccc;
+  padding: 0 20px 10px;
+  margin-top: 15px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.btns .iconfont {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btns .cut {
+  font-size: 24px;
+}
+
+.chooseFile {
+  position: relative;
+}
+
+.fileInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inputContainer .contentEdit {
+  background-color: rgb(236, 236, 236);
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  font-size: 15px;
+  height: 70px;
+  overflow: auto;
+}
+
+.contentEdit span,
+.contentEdit img {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.sendContainer {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.sendTip {
+  color: gray;
+  font-size: 12px;
+}
+
+.sendBtn {
+  padding: 2px 15px;
+  background-color: green;
+  border-radius: 2px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

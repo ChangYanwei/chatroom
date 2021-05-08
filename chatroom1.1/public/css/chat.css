@@ -1,0 +1,245 @@
+/*聊天框样式*/
+/*聊天框*/
+.chatContainer {
+  margin: 20px auto 0;
+  width: 1000px;
+  display: flex;
+}
+
+/*左侧用户列表*/
+.user-list {
+  width: 300px;
+  height: 645px;
+  background-color: rgb(46, 52, 58);
+  color: white;
+  padding: 0 20px;
+  overflow: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.header-title {
+  height: 50px;
+  line-height: 50px;
+  /*margin-left: ;*/
+}
+
+.avatarImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/*预览图片*/
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.enlargeContainer {
+  display: none;
+  color: white;
+}
+
+.enlargePreviewImg {
+  /*预览后放大的图片是相对于整个页面定位*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /*宽度设置为页面宽度的50%，高度自适应*/
+  width: 50%;
+  z-index: 200;
+}
+
+.enlargeContainer .iconfont {
+  position: absolute;
+  font-size: 25px !important;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.enlarge {
+  top: 20px;
+  right: 100px;
+}
+
+.smaller {
+  top: 20px;
+  right: 60px;
+}
+
+.close {
+  top: 20px;
+  right: 20px;
+}
+
+/*聊天室*/
+.chat-room {
+  position: relative;
+  width: 700px;
+  height: 645px;
+  background-color: rgb(236, 236, 236);
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  width: 94%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  /*padding: 0 20px;*/
+  border-bottom: 1px solid #ccc;
+
+}
+
+.chat-container {
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  overflow: auto;
+  height: 400px;
+  max-width: 620px;
+}
+
+.tip {
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  margin: 15px 0;
+}
+
+/*发送消息*/
+/*文本消息*/
+.sendMsg {
+  display: flex;
+  justify-content: flex-end;
+  /*align-items: baseline;*/
+  margin-top: 15px;
+}
+
+/*图片消息*/
+.sendImgMsg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.sendMsg .avatarImg {
+  position: relative;
+  top: -15px;
+}
+
+.sendMsg .avatarImg,
+.sendImgMsg .avatarImg {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.sendContent {
+  position: relative;
+  top: -10px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  background-color: rgb(179, 224, 129);
+  display: inline-block;
+  max-width: 200px;
+  text-align: left;
+  font-size: 15px;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+}
+
+.sendContent:after {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent transparent transparent rgb(179, 224, 129);
+}
+
+/* 复制粘贴其他地方的文字时，重新设置样式 */
+.sendContent span,
+.receiveContent span{
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.sendContent img,
+.receiveContent img{
+  width: 150px;
+}
+
+.sendContent .emoji_icon,
+.receiveContent .emoji_icon{
+  width: 25px;
+}
+
+/*图片消息中图片的大小*/
+.sendImg,
+.receiveImgMsg {
+  width: 150px;
+  cursor: pointer;
+}
+
+/*接收消息*/
+.receiveMsg {
+  display: flex;
+  margin-top: 15px;
+}
+
+.nickname {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.receiveContent {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  font-size: 15px;
+  max-width: 200px;
+  word-break: break-all;
+}
+
+.receiveContent:after {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+.rightStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
