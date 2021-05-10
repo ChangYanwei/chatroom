@@ -140,7 +140,7 @@
 .sendMsg {
   display: flex;
   justify-content: flex-end;
-  /*align-items: baseline;*/
+  align-items: baseline;
   margin-top: 15px;
 }
 
@@ -153,8 +153,8 @@
 }
 
 .sendMsg .avatarImg {
-  position: relative;
-  top: -15px;
+  /*position: relative;*/
+  /*top: -15px;*/
 }
 
 .sendMsg .avatarImg,
@@ -174,8 +174,6 @@
   text-align: left;
   font-size: 15px;
   word-break: break-all;
-  display: flex;
-  align-items: center;
 }
 
 .sendContent:after {

@@ -7,7 +7,6 @@ let server = require('http').createServer(app);
 let io = require('socket.io')(server);
 let router = require('./router');
 
-
 // 配置解析表单 POST请求体插件（注意:一定要在 app.use(router)之前)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -42,31 +41,6 @@ io.on('connection', function (socket) {
    * 2.广播消息，将当前的用户列表发送给所有用户
    * */
   socket.on('loginSuccess', function (user) {
-    /*    // 判断，如果data在users中存在，说明该用户已经登录了，不允许登录
-        // 如果data在users中不存在，说明该用户没有登录。允许用户登录
-        let user = users.find(item => {
-          return item.nickname === data.nickname;
-        });
-        console.log('user', user);
-        if (user) {
-          // 用户存在，登录失败
-          console.log('登录失败');
-          socket.emit('loginResult', {
-            err_code: 1,
-            message: "登录失败"
-          });
-          return;
-        }
-
-        // 登录成功，返回响应给当前用户
-        console.log('登录成功');
-        users.push(data);
-        socket.emit('loginResult', {
-          err_code: 0,
-          message: "登录成功",
-          user: data
-        });*/
-    // user = JSON.parse(user);
     users.push(user);
     console.log(users);
     // 告诉所有用户有新用户进来了，广播消息

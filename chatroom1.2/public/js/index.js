@@ -61,7 +61,7 @@ socket.on('receiveMessage', function (data) {
     // 自己发的消息
     html = `
             <div class="sendMsg">
-              <span class="sendContent">${data.message}</span>
+              <div class="sendContent">${data.message}</div>
               <img src="${sendUser.avatar}" class="avatarImg">
             </div>`;
   } else {
@@ -70,7 +70,7 @@ socket.on('receiveMessage', function (data) {
               <img src="${sendUser.avatar}" class="avatarImg">
               <div class="rightStyle">
                 <span class="nickname">${sendUser.nickname}</span>
-                <p class="receiveContent">${data.message}</p>
+                <div class="receiveContent">${data.message}</div>
               </div>
             </div>`;
   }
