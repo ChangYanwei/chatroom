@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录界面</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="main">
+  <div class="header">
+    <a href="/">
+      <img src="images/logo.png" class="logo">
+    </a>
+    <h1>用户登录</h1>
+  </div>
+
+  <form id="register_form">
+    <div class="form-group">
+      <label for="nickname">昵称</label>
+      <input type="text" class="form-control" id="nickname" name="nickname" placeholder="昵称">
+    </div>
+    <div class="form-group">
+      <label for="password">密码</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block">登录</button>
+  </form>
+  <div class="message">
+    <p class="text-success">已有账号? <a href="/register">点击注册</a></p>
+    <p class="text-success">代码仓库：<a href="https://github.com/ChangYanwei/chatroom">GitHub</a> </p>
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

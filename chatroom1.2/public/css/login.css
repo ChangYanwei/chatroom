@@ -1,0 +1,81 @@
+/*登录界面*/
+body {
+  background-color: #f9f9f9;
+}
+
+.main {
+  width: 400px;
+  margin: 50px auto 0;
+  /*margin-top: 50px;*/
+  color: #333;
+}
+
+.main .header {
+  text-align: center;
+}
+
+.main .header h1 {
+  font-size: 26px;
+}
+
+.main form {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.main .message {
+  padding: 10px;
+  padding-bottom: 0;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+}
+
+.header .logo {
+  width: 160px;
+}
+
+.loginContainer {
+  width: 400px;
+  /*height: 420px;*/
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  transition: display 1s;
+}
+
+.loginTitle {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nicknameInput {
+  width: 100%;
+  height: 30px;
+  border: 1px solid gray;
+  margin-top: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.loginBtn {
+  width: 100%;
+  background-color: green;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}

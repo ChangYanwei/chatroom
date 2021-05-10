@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>修改头像</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/changeAvatar.css">
+</head>
+<body>
+
+<div class="main">
+  <div class="header">
+    <a href="/">
+      <img src="images/logo.png" class="logo">
+    </a>
+  </div>
+
+  <form id="register_form">
+    <div class="form-group">
+      <label>当前头像</label>
+      <img src="{{user.avatar}}" class="currentAvatar">
+    </div>
+    <div class="form-group">
+      <label>上传新头像</label>
+      <div class="uploadImg" id="uploadImg">
+        <div class="previewContainer" id="previewContainer">
+          <div id="preview">
+            <img src="images/upload.png" class="uploadIcon">
+          </div>
+          <input type="file" id="uploadFileInput" class="uploadFileInput" name="file">
+        </div>
+        <button type="button" class="uploadImgBtn" id="uploadImgBtn">上传头像</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script src="js/changeAvatar.js"></script>
+</body>
+</html>

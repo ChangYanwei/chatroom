@@ -1,0 +1,95 @@
+body {
+  background-color: #f9f9f9;
+}
+
+.main {
+  width: 400px;
+  margin: 50px auto 0;
+  color: #333;
+}
+
+.main .header {
+  text-align: center;
+}
+
+.main .header h1 {
+  font-size: 26px;
+}
+
+.main form {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.main .message {
+  padding: 10px;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+}
+
+.header .logo {
+  width: 160px;
+}
+
+.currentAvatar {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.uploadImg {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.uploadImgBtn {
+  background-color: #46b8da;
+  padding: 5px 15px;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.previewContainer {
+  position: relative;
+  margin-top: 15px;
+  border: 2px dotted gainsboro;
+  padding: 10px 0;
+}
+
+.uploadIcon {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+.uploadFileInput {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  opacity: 0;
+}
+
+#preview {
+  display: inline-block;
+}
+
+.previewAvatar {
+  width: 80px;
+  height: 80px;
+}

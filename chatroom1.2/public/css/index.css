@@ -1,0 +1,13 @@
+@import "login.css";
+@import "chat.css";
+@import "sendMessage.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  background-color: rgb(154, 162, 173);
+}

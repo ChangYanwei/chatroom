@@ -18,4 +18,7 @@
 - 点击图片消息放大预览
 - 聊天记录和用户信息没有持久化存储
 
-
+## 版本1.2 socket.io + express + mongodb + art-template
+- 进入chatroom1.2文件夹，执行`node app.js`，访问`http://127.0.0.1:7000`
+- 用户信息保存到了MongoDB数据库中
+- 新增注册和登录页面
