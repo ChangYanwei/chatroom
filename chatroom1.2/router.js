@@ -106,8 +106,8 @@ router.post('/changeAvatar', async function (req, res) {
   });
 
   let user = new User({
-    nickname:result.nickname,
-    password:result.password,
+    nickname: result.nickname,
+    password: result.password,
     avatar
   });
   await user.save();
@@ -116,6 +116,15 @@ router.post('/changeAvatar', async function (req, res) {
   return res.status(200).json({
     err_code: 0,
     message: "更新头像成功"
+  })
+});
+
+// 退出登录的请求
+router.post('/loginOut', function (req, res) {
+  req.session.user = null;
+  return res.status(200).json({
+    err_code: 0,
+    message: "已退出"
   })
 });
 

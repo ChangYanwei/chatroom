@@ -274,8 +274,21 @@ function enlargeImg() {
   });
 }
 
+function loginOut() {
+  let loginOut = document.getElementById('loginOut');
+  loginOut.addEventListener('click',function () {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      location.href = '/login';
+    };
+    xhr.open('POST','/loginOut');
+    xhr.send();
+  })
+}
+
 sendMessage();
 sendImg();
 emoji();
 cutImg();
 enlargeImg();
+loginOut();

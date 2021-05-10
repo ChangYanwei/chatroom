@@ -15,11 +15,15 @@
   <!-- 左侧用户列表 -->
   <div class="user-list">
     <div class="current-user">
-      <p class="header-title">当前用户</p>
-      <div class="user-info">
-
-        <img src="{{user.avatar}}" class="avatarImg" id="userAvatarImg">
-        <span id="currentNickname">{{user.nickname}}</span>
+      <p class="header-title">
+        <span>当前用户</span>
+        <a class="loginOut" id="loginOut">退出登录</a>
+      </p>
+      <div class="current-user-info">
+        <div style="display: flex;align-items: center">
+          <img src="{{user.avatar}}" class="avatarImg" id="userAvatarImg">
+          <span id="currentNickname">{{user.nickname}}</span>
+        </div>
         <a href="/changeAvatar" class="changeAvatar">修改头像</a>
       </div>
 
