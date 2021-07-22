@@ -1,6 +1,8 @@
 # chatroom
 多人聊天室
 
+博客：[使用socket.io + express + mongodb制作在线聊天室](https://blog.csdn.net/weixin_43974265/article/details/116600763)
+
 > 由于版本之间的改动很大，我想把代码都保留下来，所以不同版本的聊天室我放在了不同的文件夹中。
 
 ## 版本1.0 websocket-chatroom
